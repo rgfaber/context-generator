@@ -59,8 +59,8 @@ EXPOSE 80
 EXPOSE 443
 ARG sdk_nugets_url
 ARG logatron_nugets_url
-ARG logatron_cid_usr
-ARG logatron_cid_pwd
+ARG cid_usr
+ARG cid_pwd
 ENV DOCKER_BUILDKIT=1
 RUN --mount=type=secret,id=cid_pwd                   cid_pwd=/run/secrets/cid_pwd
 
@@ -69,13 +69,13 @@ FROM mcr.microsoft.com/dotnet/sdk:5.0 AS publish
 ENV DOCKER_BUILDKIT=1
 ARG sdk_nugets_url
 ARG logatron_nugets_url
-ARG logatron_cid_usr
-ARG logatron_cid_pwd
+ARG cid_usr
+ARG cid_pwd
 RUN --mount=type=secret,id=cid_pwd                   cat /run/secrets/cid_pwd
 WORKDIR /src
 COPY . .
-RUN dotnet nuget add source ${sdk_nugets_url} -n "M5x SDK Nugets" -u ${logatron_cid_usr} -p ${logatron_cid_pwd} --store-password-in-clear-text
-RUN dotnet nuget add source ${logatron_nugets_url} -n "Logatron Nugets" -u ${logatron_cid_usr} -p ${logatron_cid_pwd} --store-password-in-clear-text
+RUN dotnet nuget add source ${sdk_nugets_url} -n "M5x SDK Nugets" -u ${cid_usr} -p ${cid_pwd} --store-password-in-clear-text
+RUN dotnet nuget add source ${logatron_nugets_url} -n "Logatron Nugets" -u ${cid_usr} -p ${cid_pwd} --store-password-in-clear-text
 WORKDIR "/src/$1/$2.$3"
 RUN dotnet publish "$2.$3.csproj" -c Release -o /app/publish --runtime alpine-x64 --self-contained 
  

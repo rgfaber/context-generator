@@ -16,6 +16,6 @@ cleanup() {
     ./push.sh "cleanup"
 }
 
-./init-context.sh -u $LOGATRON_CID_USER -p $LOGATRON_CID_PWD -n $api_prefix -i $img_prefix -ip $id_prefix  -s $sdk_version
+./init-context.sh -u $CID_USER -p $CID_PWD -n $api_prefix -i $img_prefix -ip $id_prefix  -s $sdk_version
 
 # cleanup

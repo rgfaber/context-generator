@@ -2,12 +2,6 @@
 	"folders": [
 		{
 			"path": "."
-		},
-		{
-			"path": "../../cid"
-		},
-		{
-			"path": "../../../github.com/rgfaber"
 		}
 	],
 	"settings": {}
