@@ -2,12 +2,12 @@
   <PropertyGroup>
     <VersionPrefix>0.0.0.1</VersionPrefix>
     <VersionSuffix>$(VersionSuffix)</VersionSuffix>
-    <Authors>Logatron Team</Authors>
+    <Authors>App Team</Authors>
     <Company>DisComCo Sp.z.o.o.</Company>
     <Copyright>Copyright (c)2019-2021 by DisComCo</Copyright>
     <TargetFramework>net5.0</TargetFramework>
     <SignAssembly>true</SignAssembly>
-    <AssemblyOriginatorKeyFile>../../../logatron.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>../../../sign.snk</AssemblyOriginatorKeyFile>
     <LangVersion>latest</LangVersion>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <RuntimeIdentifier>linux-x64</RuntimeIdentifier>
