@@ -1,0 +1,28 @@
+<Project>
+  <PropertyGroup>
+    <VersionPrefix>0.0.0.1</VersionPrefix>
+    <VersionSuffix>$(VersionSuffix)</VersionSuffix>
+    <Authors>Logatron Team</Authors>
+    <Company>DisComCo Sp.z.o.o.</Company>
+    <Copyright>Copyright (c)2019-2021 by DisComCo</Copyright>
+    <TargetFramework>net5.0</TargetFramework>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>../../../logatron.snk</AssemblyOriginatorKeyFile>
+    <LangVersion>latest</LangVersion>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <RuntimeIdentifier>linux-x64</RuntimeIdentifier>
+    <!-- <IsTrimmable>true</IsTrimmable>
+    <PublishTrimmed>true</PublishTrimmed>
+    <TrimMode>Link</TrimMode> -->
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <LangVersion>latest</LangVersion>
+    <OutputPath>../../../BLD</OutputPath>
+    <DefineConstants>TRACE;DEBUG;NETCOREAPP3_0;CORECLR</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <LangVersion>latest</LangVersion>
+    <OutputPath>../../../BLD</OutputPath>
+    <DefineConstants>TRACE;RELEASE;NETCOREAPP3_0;CORECLR</DefineConstants>
+  </PropertyGroup>
+</Project>

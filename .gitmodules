@@ -1,0 +1,3 @@
+[submodule "cid"]
+	path = cid
+	url = ../../cid.git
